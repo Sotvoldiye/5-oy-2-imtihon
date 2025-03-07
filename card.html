@@ -1,22 +1,20 @@
-<!doctype html>
-<html lang="en" data-theme="light">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Uzum Market</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/output.css">
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="./src/output.css" />
-  </head>
-  <body>
-    
-      <header class="bg-base-200 mb-5">
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+    <header class="bg-base-200 mb-5">
         <div class="navbar main-container">
           <div class="navbar-start">
             <a class="btn btn-secondary" href="./index.html">UzumMarket</a>
@@ -33,66 +31,78 @@
               <i class="fa-solid fa-moon text-2xl"></i>
             </button>
             <div class="indicator">
-              <span class="indicator-item badge badge-sm badge-secondary left-4 top-2 ">12</span>
-              <a class="btn btn-ghost" href="./card.html"
-              ><i class="fa-solid fa-cart-shopping text-2xl"></i
-            ></a>
-            </div>
+                <span class="indicator-item badge badge-sm badge-secondary left-4 top-2 ">12</span>
+                <a class="btn btn-ghost" href=""
+                ><i class="fa-solid fa-cart-shopping text-2xl"></i
+              ></a>
+              </div>
+            
           </div>
         </div>
       </header>
-      <main class="pb-10">
-        <div class="lds-ring lds-roller"><div></div><div></div><div></div><div></div></div>
-   
-        <div class="body">
-    
-        <section>
-          <div class="main-container">
-            <h2 class="mb-5 text-3xl">Products:</h2>
-  
-            <div
-              id="card-list"
-              class="gird-cols-2 grid gap-4 md:grid-cols-3 lg:grid-cols-4"
-            >
-              <template
-                ><a href="" style="display: block;" class="card  bg-base-100 w-full shadow-sm">
-                  <figure>
-                    <img src="https://picsum.photos/id/9/300/200" alt="" />
-                  </figure>
-                  <div class="card-body">
-                    <p class="description line-clamp-2">
-                      A card component has a figure, a body part, and inside body
-                      there are title and actions parts
-                    </p>
-                    <p class="flex items-center">
-                      <i class="fa-solid fa-star text-orange-300"></i>
-                      <span class="rating">4.7</span>
-                      <span class="review">(10 Review)</span>
-                    </p>
-  
-                    <div class="flex justify-between items-center">
-                      <div class="flex flex-col gap-1 ">
-                        <del class="price badge badge-soft badge-secondary"
-                          >$1999</del
-                        >
-                        <h3
-                          class="price-with-discount badge badge-primary font-bold"
-                        >
-                          $1555
-                        </h3>
-                      </div>
-                      <button
-                        class="buy-btn btn hover:btn-primary self-end rounded-full"
-                      >
-                        <i class="fa-solid fa-cart-plus text-xl"></i>
-                      </button>
-                    </div>
-                  </div> </a
-              ></template>
+      <main>
+        <section class="cart">
+            <div class="main-container">
+                <div class="overflow-x-auto">
+  <table class="table">
+    <!-- head -->
+    <thead>
+      <tr>
+        
+        <th>Title/Image/Bran</th>
+        <th>Price</th>
+        <th>Favorite Color</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- row 1 -->
+      <tr>
+       
+        <td>
+          <div class="flex items-center gap-3">
+            <div class="avatar">
+              <div class="mask mask-squircle h-12 w-12">
+                <img
+                  src="https://img.daisyui.com/images/profile/demo/2@94.webp"
+                  alt="Avatar Tailwind CSS Component" />
+              </div>
+            </div>
+            <div>
+              <div class="font-bold">Hart Hagerty</div>
+              <div class="text-sm opacity-50">United States</div>
             </div>
           </div>
+        </td>
+        <td>
+            <div class="flex flex-col gap-1 ">
+                <del class="price badge badge-soft badge-secondary"
+                  >$1999</del
+                >
+                <h3
+                  class="price-with-discount badge badge-primary font-bold"
+                >
+                  $1555
+                </h3>
+              </div>   </td>
+        <td>
+            <div class="flex gap-2 items-center">
+                 <button class="btn btn-sm btn-primary btn-outline">+</button>
+                <span class="text-2xl font-bold">4</span>
+                <button class="btn btn-sm btn-primary btn-outline">-</button>
+            </div>
+        </td>
+        <th>
+          <button class="btn btn-secondary btn-outline btn-md"><i class="fa-solid fa-trash text-xl"></i></button>
+        </th>
+      </tr>
+     
+    
+  </table>
+  
+</div>
+            </div>
         </section>
-        </div>
       </main>
       <footer class="bg-base-300 text-base-content p-4">
         <div class="main-container footer sm:footer-horizontal items-center">
@@ -157,6 +167,7 @@
           </nav>
         </div>
       </footer>
-    <script type="module" src="./src/js/main.js"></script>
-  </body>
+
+      <script type="module" src="./src/js/card.js"></script>
+</body>
 </html>

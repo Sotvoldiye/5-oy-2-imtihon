@@ -5,14 +5,14 @@ import { doc } from "prettier";
 
 const queryString = window.location.search;
 const id = new URLSearchParams(queryString).get("id");
-const body = document.querySelector(".body")
+const body = document.querySelector(".body");
 const loadingElement = document.querySelector(".lds-roller");
 
 fetchData(`https://dummyjson.com/product/` + id)
   .then((product) => {
     showproduct(product);
-     body.style.display ="grid"
-      loadingElement.style.display = "none"
+    body.style.display = "flex";
+    loadingElement.style.display = "none";
     const newObject = {
       name: product.title,
 
@@ -26,8 +26,7 @@ fetchData(`https://dummyjson.com/product/` + id)
       warrantyInformation: product.warrantyInformation,
     };
     const card = document.querySelector(".card");
-    const imgs = document.querySelector(".imges");
-    const id = document.querySelector(".id");
+    const imgs = document.querySelectorAll(".imges");
     const card_title_title = document.querySelector(".card_title_title");
     const card_title_brend = document.querySelector(".card_title_brend");
     const brand_category = document.querySelector(".brand-category");
@@ -39,10 +38,10 @@ fetchData(`https://dummyjson.com/product/` + id)
     const waranty = document.querySelector(".waranty");
     const discountPercentage = document.querySelector(".discountPercentage");
     const price = document.querySelector(".price");
-    imgs.src = product.thumbnail;
-    id.textContent += product.id,
+    for (let i = 0; i < imgs.length; i++) {
+      imgs[i].src = product.thumbnail;
+    }
     (card_title_title.textContent += product.title),
-      (card_title_brend.textContent += product.brand),
       (brand_category.textContent += product.category),
       (card_title_description.textContent = product.description),
       (warantiy_product.textContent += product.warrantyInformation),
@@ -50,23 +49,55 @@ fetchData(`https://dummyjson.com/product/` + id)
       (waranty.textContent += product.shippingInformation);
     discountPercentage.textContent += product.discountPercentage + "$";
     price.textContent += product.price + "$";
+    const rewievs = product.reviews;
 
-    // card.innerHTML = `
+    const commentCard = document.querySelector(".comment");
+  
+    rewievs.forEach((element) => {
+      commentCard.innerHTML += `
+          <div class="comment-card rounded-lg p-5 bg-secondary-content ">
+  <h4 class="comment-data  text-sm">${element.date}</h4>
+  <p class="comment-comment text-lg font-medium">${element.comment}</p>
+  
+  <div class="email flex items-center justify-between mt-3">
+    <a href="mailto:${element.reviewerEmail}" class="comment-email text-blue-600 underline text-sm">
+      ${element.reviewerEmail}
+    </a>
+    <div class="comment-star flex items-center text-yellow-500">
+      <i class="fa-solid fa-star"></i>
+      <span class="ml-1 text-sm font-semibold">${element.rating}</span>
+    </div>
+  </div>
 
-    //  <div class="card-_title">
-
-    //   <p class="card_title_description">
-    //     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, repellat inventore tenetur exercitationem
-    //     vero quasi sit laboriosam! Unde, fuga quaerat. Eos, tempora magni. Similique dolore necessitatibus cum
-    //     laudantium corporis laboriosam!
-    //   </p>
-    //   <p class="warantiy-product">
-    //     Lorem ipsum dolor, sit amet consectetur adipisicing.
-    //   </p>
-    //   <h2 class="card_rating"><i class="fa-solid fa-star"></i> Rating</h2>
-    // </div>`
-    console.log(newObject);
+  <div class="comment-name mt-3 font-bold">${element.reviewerName}</div>
+</div>
+`
+    });
+    const mainImgs = document.querySelector(".main-imgs");  
+    const main_Imgs = product.images;  
+    
+    main_Imgs.forEach((el) => {
+      mainImgs.innerHTML += `
+        <img class="img w-2xs" src="${el}" alt="Product Image">
+      `;
+    });
+    
   })
   .catch((error) => {
     console.log(error);
   });
+
+//   <div class="comment-card">
+//   <h4 class="comment-data"></h4>
+//    <p class="comment-comment"></p>
+//    <div class="email">
+//     <a href="" class="comment-email"></a>
+//     <div class="comment-star">
+//       <i class="fa-solid fa-star"></i>
+//       <p class="comment-stars"></p>
+//     </div>
+//    </div>
+//    <div class="comment-name">
+
+//    </div>
+// </div>

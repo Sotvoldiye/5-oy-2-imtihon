@@ -1,13 +1,13 @@
 const template = document.querySelector("template");
 const cardList = document.getElementById("card-list");
-const cards = document.querySelector(".card")
+const cards = document.querySelector(".card");
 const loadingElement = document.querySelector(".lds-roller");
-const body = document.querySelector(".body")
-let a_Href = []
+const body = document.querySelector(".body");
+let a_Href = [];
 const showCards = ({ products }) => {
-loadingElement.style.display = "block"
-  products.forEach((product) => {
-    body.style.display = "block"
+  loadingElement.style.display = "block";
+  products.reverse().forEach((product) => {
+    body.style.display = "block";
     const {
       id,
       title,
@@ -33,7 +33,7 @@ loadingElement.style.display = "block"
     a.href = `./product.html?id=${id}`;
     img.src = thumbnail;
     img.alt = title;
-    a_Href.push(a)
+    a_Href.push(a);
     descriptionText.textContent = description;
 
     ratingText.textContent = rating;
@@ -44,17 +44,14 @@ loadingElement.style.display = "block"
     reviewText.textContent = `${reviews.length} Reviews`;
 
     cardList.appendChild(clone);
-
   });
-  loadingElement.style.display = "none"
+  loadingElement.style.display = "none";
 };
 
 const showproduct = (product) => {
   console.log(product);
-
-  
 };
 
-console.log(cards)
+console.log(cards);
 
 export { showCards, showproduct };

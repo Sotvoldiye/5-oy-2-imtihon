@@ -29,34 +29,54 @@
         <button class="btn" id="mode-toggler">
           <i class="fa-solid fa-moon text-2xl"></i>
         </button>
-        <a class="btn btn-ghost" href=""><i class="fa-solid fa-cart-shopping text-2xl"></i></a>
-      </div>
+        <div class="indicator">
+          <span class="indicator-item badge badge-sm badge-secondary left-4 top-2 ">12</span>
+          <a class="btn btn-ghost" href="./card.html"
+          ><i class="fa-solid fa-cart-shopping text-2xl"></i
+        ></a>
+        </div>      </div>
     </div>
   </header>
   <main class="">
     <div class="lds-ring lds-roller"><div></div><div></div><div></div><div></div></div>
-   
- <div class="body flex">
+    <div class="container">
+    <div class="main flex flex-col gap-20 md:flex-row  justify-center max-w-lg mx-auto w-full items-center">
+      <div class="main-grid">
+        <div class=" body card card-side bg-base-100 shadow-sm items-center justify-center max-w-lg mx-auto mb-auto">
+          <figure>
+            <img class="imges"
+              src=""
+              alt="Movie" />
+          </figure>
+          <div class="card-body h-100% w-md">
+            <div class="card_title   pl-[20px] mr-auto">
+              <h1 class="card_title_title text-[30px]"></h1>
+              <p class="brand-category"> </p>
+              <p class="warantiy-product"> </p>
+              <h2 class="flex items-center"> <i class="fa-solid fa-star"></i><p  class="card_rating"></p></h2>
+              <p class="waranty"> </p>
+              <p class="card_title_description"></p>
+              <del class="discountPercentage"> </del>
+              <p class="price"> </p>
+          </div>
+         <div class="flex flex-1/2 gap-2 ml-auto">
+          <button class="btn btn-secondary btn-outline btn-md"><i class="fa-solid fa-cart-shopping text-2xl"></i></button>
+          <button class="btn btn-secondary btn-outline btn-md"><i class="fa-solid fa-trash"></i></button> 
+        
+         </div>
+        </div>  
+         
+        </div>
+        <div class="main-imgs grid grid-cols-4  items-center justify-left max-w-lg mx-left ml-30 mb-auto">
+  
+        </div>
+      </div>
+    <div class="comment grid gap-1.5">
 
- <div class="">
-  <img class="imges w-[500px]" src="" alt="">
- </div>
-  <div class="">
-    <div class="card_title">
-      <h2  class="id text-[24px]">Maxsulot raqami: </h2>
-      <h1 class="card_title_title ">Maxsulot nomi: </h1>
-      <h3 class="card_title_brend">Maxsulotni ishlab chiqaruvchisi: </h3>
-      <p class="brand-category">Maxsulot turi: </p>
-      <p class="warantiy-product">Maxsulotni garantiasi: </p>
-      <h2 class="flex items-center">Reytingi: <i class="fa-solid fa-star"></i><p  class="card_rating"></p></h2>
-      <p class="waranty">Yetib kelish yo'li: </p>
-      <p class="discountPercentage">Asl narxi: </p>
-      <p class="price">Jegirma narxida: </p>
-      <p class="card_title_description"></p>
     </div>
-
- </div>
 </div>
+ </div>
+
   </main>
   <footer class="bg-base-300 text-base-content p-4">
     <div class="main-container footer sm:footer-horizontal items-center">
